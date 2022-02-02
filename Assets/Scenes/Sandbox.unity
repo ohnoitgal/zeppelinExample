@@ -481,13 +481,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 692961278, guid: a5c997ea7afeeab4b9c54a830e136495, type: 3}
-      propertyPath: m_Drag
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 692961278, guid: a5c997ea7afeeab4b9c54a830e136495, type: 3}
-      propertyPath: m_Constraints
-      value: 56
+    - target: {fileID: 259806478, guid: a5c997ea7afeeab4b9c54a830e136495, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1394501670437662661, guid: a5c997ea7afeeab4b9c54a830e136495, type: 3}
       propertyPath: m_RootOrder
