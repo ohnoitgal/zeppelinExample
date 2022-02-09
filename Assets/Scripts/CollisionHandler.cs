@@ -4,9 +4,24 @@ using UnityEngine.SceneManagement;
 public class CollisionHandler : MonoBehaviour
 {
     [SerializeField] float levelLoadDelay = 1f;
+    [SerializeField] AudioClip successTune;
+    [SerializeField] AudioClip failTune;
+
+    AudioSource audioSource;
+
+    bool isTransitioning = false;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
 
     void OnCollisionEnter(Collision other)
     {
+        if(isTransitioning) {return;}
+        
+
         switch(other.gameObject.tag)
         {
             case "Friendly":
@@ -24,12 +39,18 @@ public class CollisionHandler : MonoBehaviour
     
     void LevelCompletionSequence()
     {
+        isTransitioning = true;
+        audioSource.Stop();
+        audioSource.PlayOneShot(successTune);
         GetComponent<Movement>().enabled = false;
         Invoke("LoadNextLevel", levelLoadDelay); 
     }
 
     void StartCrashSequence()
     {
+        isTransitioning = true;
+        audioSource.Stop();
+        audioSource.PlayOneShot(failTune);
         GetComponent<Movement>().enabled = false;
         Invoke("ReloadLevel", levelLoadDelay); 
     }
@@ -37,6 +58,7 @@ public class CollisionHandler : MonoBehaviour
     void ReloadLevel()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        isTransitioning = false;
         SceneManager.LoadScene(currentSceneIndex);
     }
 
@@ -48,6 +70,7 @@ public class CollisionHandler : MonoBehaviour
         {
             nextSceneIndex = 0;
         }
+        isTransitioning = false;
         SceneManager.LoadScene(nextSceneIndex);
     }
     

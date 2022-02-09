@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 692961278}
   - component: {fileID: 692961277}
   - component: {fileID: 259806478}
-  - component: {fileID: 1790070912}
   - component: {fileID: 457144835710777643}
   m_Layer: 0
   m_Name: Zeppelin
@@ -130,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainThrust: 1000
   rotationVar: 100
+  mainEngine: {fileID: 8300000, guid: 652c119d2663faa47a85bf4c22ab742b, type: 3}
 --- !u!82 &259806478
 AudioSource:
   m_ObjectHideFlags: 0
@@ -140,7 +140,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 652c119d2663faa47a85bf4c22ab742b, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -226,18 +226,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1790070912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9000488165026006701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bce6e5c438b76e048b29564db260b925, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &457144835710777643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,3 +238,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce6e5c438b76e048b29564db260b925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelLoadDelay: 1
+  successTune: {fileID: 8300000, guid: f4beb63895affbb439b0be33b3b3a6d7, type: 3}
+  failTune: {fileID: 8300000, guid: 62711916b097f4b4f8b60499ae602545, type: 3}
