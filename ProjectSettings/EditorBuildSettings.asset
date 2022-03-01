@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Under.unity
     guid: 3b47168fb4d708f4990c7ecc0f894741
+  - enabled: 1
+    path: Assets/Scenes/Narrow.unity
+    guid: aedf71685ed47ab4ba426db2b3921da7
+  - enabled: 1
+    path: Assets/Scenes/Coin Machine.unity
+    guid: 1f4a8be4679dd5b4ba2d0d9c0b941b58
+  - enabled: 1
+    path: Assets/Scenes/Everything MOVES.unity
+    guid: 2e541efe178f3fb41aee677282eee9f4
   m_configObjects: {}
